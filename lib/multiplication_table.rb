@@ -5,8 +5,9 @@ class MultiplicationTable
   def self.sanity
   end
 
-  def self.print n = 2
-    primes = PrimeUtils.n_primes( n )
+  def self.print n = nil
+
+    primes = PrimeUtils.n_primes( n.to_i )
     output = ''
 
     header = "\t"

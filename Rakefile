@@ -23,9 +23,14 @@ desc 'default task'
 task :default => :test
 
 require './lib/multiplication_table'
-desc 'print a table'
-task :print_table do
-  MultiplicationTable.print( 5 )                  
+desc "print a multiplication table of N primes Example: n_primes=5 rake print_table"
+task :print_table do |t, args|
+  if nil === ENV['n_primes']
+    puts 'Print a multiplication table of primes.'
+    puts 'Usage: n_primes=5 rake print_table'
+  else
+    MultiplicationTable.print ENV['n_primes']                  
+  end
 end
 
 require 'rdoc/task'

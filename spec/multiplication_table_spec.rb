@@ -1,7 +1,15 @@
 
 require 'multiplication_table'
 
+def puts a
+  ; # do nothing, suppress output.
+end
+
 describe MultiplicationTable do
+
+  before :each do
+    ;
+  end
 
   it '#sanity' do
     MultiplicationTable.methods.include?( :print ).should eql true
